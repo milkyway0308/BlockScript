@@ -1,5 +1,7 @@
 package skywolf46.BlockScript.Script.ScriptBlocks;
 
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class ScriptMap {
@@ -16,4 +18,12 @@ public class ScriptMap {
         return scriptBlock.get(spoint);
     }
 
+
+    public void serializeTo(ObjectOutputStream st) throws IOException {
+        for(ScriptPoint sp : scriptBlock.keySet()){
+            st.writeInt(sp.getX());
+            st.writeInt(sp.getY());
+            scriptBlock.get(sp).getNamespace().write(st);
+        }
+    }
 }

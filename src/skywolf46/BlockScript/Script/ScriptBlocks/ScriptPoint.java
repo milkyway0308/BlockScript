@@ -20,6 +20,14 @@ public class ScriptPoint {
         return new ScriptPoint(x, y);
     }
 
+    public int getY() {
+        return y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
     public ScriptPoint[] getNextPoint() {
         return nextPoints.toArray(nextPointer);
     }

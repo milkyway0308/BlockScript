@@ -24,11 +24,9 @@ public class BlockScriptSocket extends WebSocketServer {
 
     @Override
     public void onMessage(WebSocket webSocket, String s) {
-        webSocket.
         String[] sp = s.split("\\|");
         switch (sp[0]) {
             case "LoadStart": {
-
 
                 webSocket.send("LoadEnd|" + sp[1]);
             }break;
